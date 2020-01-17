@@ -1,0 +1,168 @@
+/* LAYOUT STYLE */
+
+html, body{
+height: 100%;
+width:100%;
+overflow: hidden;
+margin: 0;
+text-align: center;
+}
+  
+.grass, .sky, .road, .hands{
+position: relative;
+}
+
+.face{
+display: block;
+height: 180px;
+margin-left: auto;
+margin-right: auto;
+padding-top: 40px;
+animation: rotate 1s infinite linear alternate;
+}
+
+.btn{
+width: 600px;
+height: 30px;
+background: none;
+text-decoration: none;
+border: 4px solid;
+color: #3498db;
+font-weight: 300;
+text-transform: uppercase;
+cursor: pointer;
+font-size: 20px;
+position: relative;
+}
+
+.btn::before,.btn::after{
+content: "";
+position: absolute;
+width: 14px;
+height: 4px;
+background: #353b48;
+transform: skewX(50deg);
+transition: .4s linear;
+}
+
+.btn::before{
+top: -4px;
+left: 10%;
+}
+  
+.btn::after{
+bottom: -4px;
+right: 10%;
+}
+
+.btn:hover::before{
+left: 80%;
+}
+
+.btn:hover::after{
+right: 80%;
+}
+
+.sayings{
+font-size: 30px;
+display: inline-block;
+padding-top: 10px;
+font-family: serif;
+font-weight: bolder;
+font-style: oblique;
+color: green;
+}
+
+.hands{
+position: relative;
+}
+
+.sky{
+height: 40%;
+background: skyblue;
+}
+
+.grass{
+height: 30%;
+background: greenyellow;
+}
+
+.road{
+height: 30%;
+background: #807e78;
+box-sizing: border-box;
+border-top: 10px solid grey;
+border-bottom: 10px solid grey;
+width: 100%;
+}
+
+.lines{
+box-sizing: border-box;
+border: 5px dashed #fff;
+height: 0px;
+width: 100%;
+position: absolute;
+top: 45%;
+}
+
+/* RUNNING ANIMATION */
+.mario {
+position: absolute;
+top: -40px;
+left: 0px;
+animation: fast 2s linear both infinite;
+}
+
+.luigi {
+position: absolute;
+top: 50px;
+left: 0px;
+animation: slow 3s linear both infinite
+}
+
+.hands-left{
+height: 150px;
+float: left;
+animation: swayleft 0.25s linear infinite alternate;
+}
+
+.hands-right{
+height: 150px;
+float: right;
+animation: swayright 0.25s linear infinite alternate;
+}
+
+
+/* KEYFRAMES */
+@keyframes fast{
+from{ transform: translateX(-200px)}
+to{ transform: translateX(1700px)}
+}
+
+@keyframes slow{
+from{ transform: translateX(-200px)}
+to{ transform: translateX(1500px)}
+}
+
+@keyframes swayleft{
+from{ transform: translateY(10px) rotateY(-80deg)}
+to{ transform: translateY(10px) rotateY(80deg)}
+}
+
+@keyframes swayright{
+from{ transform: rotateY(180deg) translateY(10px) rotateY(-80deg)}
+to{ transform: rotateY(180deg) translateY(10px) rotateY(80deg)}
+}
+
+@keyframes rotate {
+from {
+    transform: rotate(0deg)
+                translate(-100px)
+                rotate(0deg);
+}
+to {
+    transform: rotate(180deg)
+                translate(-100px) 
+                rotate(-180deg);
+}
+}
